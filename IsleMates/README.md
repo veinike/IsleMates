@@ -32,9 +32,16 @@ IsleMates\IsleMates\target\installer\IsleMates\IsleMates.exe"
 
 - **Drag one resident onto another** to start a conversation
 - Click to advance the dialogue (speakers alternate)
-- Conversations end automatically after 2-5 messages
-- Each message recovers 10% mood for the speaking resident
+- Conversations adapt to the relationship tier between residents (acquaintance → friends → close friends → best friends)
+- Residents may argue, confess romantic feelings, or become a couple
+- Each message recovers mood for the speaking resident
 - Press **ESC** to exit a conversation early
+
+### Saving & Loading
+
+- The game **auto-saves** periodically and when you exit via the menu
+- On the main menu, use **Continue Game** to resume your last save or **Start New Game** to begin fresh
+- A confirmation message appears when the game is saved
 
 ### Room transitions
 

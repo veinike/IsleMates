@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
@@ -28,7 +29,7 @@ public final class GameState {
     private final ReadWriteLock rwLock = new ReentrantReadWriteLock();
     private final List<Resident> residents = new ArrayList<>();
     private final Island island = new Island();
-    private final Map<RelationshipPair, Relationship> relationships = new HashMap<>();
+    private final Map<RelationshipPair, Relationship> relationships = new ConcurrentHashMap<>();
     private TimeOfDay timeOfDay = TimeOfDay.MORNING;
     /** Position in {@link #DAY_NIGHT_CYCLE_MS}; drives {@link #timeOfDay} and the HUD cycle graphic. */
     private long dayNightCycleMs;

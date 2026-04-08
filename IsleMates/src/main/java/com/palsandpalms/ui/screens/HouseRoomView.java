@@ -1,10 +1,17 @@
 package com.palsandpalms.ui.screens;
 
-import com.palsandpalms.engine.ResidentAI;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import java.util.function.BiConsumer;
+
 import com.palsandpalms.engine.GameState;
+import com.palsandpalms.engine.ResidentAI;
 import com.palsandpalms.model.Resident;
 import com.palsandpalms.model.Room;
-import com.palsandpalms.world.BathroomResource;
 import com.palsandpalms.ui.AssetLoader;
 import com.palsandpalms.ui.GameAssets;
 import com.palsandpalms.ui.GameViewport;
@@ -14,8 +21,9 @@ import com.palsandpalms.ui.SpriteButton;
 import com.palsandpalms.ui.components.AnimatedResident;
 import com.palsandpalms.ui.components.ConversationOverlay;
 import com.palsandpalms.ui.components.ResidentHudBar;
-import com.palsandpalms.ui.components.ResidentPositionDebugPane;
 import com.palsandpalms.ui.components.ResidentStatsPopup;
+import com.palsandpalms.world.BathroomResource;
+
 import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
@@ -30,14 +38,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.function.BiConsumer;
 
 public final class HouseRoomView {
 
@@ -129,13 +129,13 @@ public final class HouseRoomView {
             }
         });
         AnchorPane.setRightAnchor(toilet, 140.0);
-        AnchorPane.setBottomAnchor(toilet, 52.5);
+        AnchorPane.setBottomAnchor(toilet, 40.0);
 
         ImageView sofa = new ImageView(AssetLoader.loadImageNatural(GameAssets.HOUSE_SOFA));
         sofa.setPreserveRatio(true);
         sofa.fitHeightProperty().bind(root.heightProperty().multiply(0.8));
         SpriteButton.styleAsButton(sofa);
-        AnchorPane.setLeftAnchor(sofa, 150.0);
+        AnchorPane.setLeftAnchor(sofa, 135.0);
         AnchorPane.setBottomAnchor(sofa, 50.0);
 
         layer.getChildren().addAll(exitBtn, sofa, toilet);
@@ -168,10 +168,7 @@ public final class HouseRoomView {
         StackPane.setMargin(hudWrap, new Insets(15));
         root.getChildren().add(hudWrap);
 
-        ResidentPositionDebugPane debugPane = new ResidentPositionDebugPane();
-        StackPane.setAlignment(debugPane, Pos.TOP_RIGHT);
-        StackPane.setMargin(debugPane, new Insets(15));
-        root.getChildren().add(debugPane);
+
 
         final Map<UUID, Boolean> prevAtToilet = new HashMap<>();
 
@@ -234,7 +231,8 @@ public final class HouseRoomView {
                                                 if (oth != null
                                                         && AnimatedResident.showInHouse(self)
                                                         && AnimatedResident.showInHouse(oth)) {
-                                                    ConversationOverlay.show(root, self, oth);
+                                                    var rel = state.getOrCreateRelationship(self.getId(), oth.getId());
+                                                    ConversationOverlay.show(root, self, oth, rel);
                                                     return;
                                                 }
                                             } finally {
@@ -322,7 +320,6 @@ public final class HouseRoomView {
                         }
                     }
                     hud.update(state, sprites);
-                    debugPane.update(state, sprites);
                 } finally {
                     state.getRwLock().readLock().unlock();
                 }

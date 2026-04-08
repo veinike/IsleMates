@@ -6,6 +6,7 @@ import com.palsandpalms.model.TimeOfDay;
 import com.palsandpalms.model.Resident;
 import com.palsandpalms.ui.ResidentDragGuard;
 import com.palsandpalms.ui.ResidentPositionRegistry;
+import com.palsandpalms.world.BathroomResource;
 import com.palsandpalms.world.Fridge;
 import com.palsandpalms.world.GameEventQueue;
 
@@ -18,6 +19,7 @@ public final class ResidentAI implements Runnable {
     private final UUID residentId;
     private final GameState state;
     private final Fridge fridge;
+    private final BathroomResource bathroom;
     private final GameEventQueue eventQueue;
     private final Random random = new Random();
     private final AtomicBoolean running = new AtomicBoolean(true);
@@ -25,9 +27,14 @@ public final class ResidentAI implements Runnable {
     private static final java.util.Map<UUID, Long> LAST_SWITCH_MS = new java.util.concurrent.ConcurrentHashMap<>();
 
     public ResidentAI(UUID residentId, GameState state, Fridge fridge, GameEventQueue eventQueue) {
+        this(residentId, state, fridge, null, eventQueue);
+    }
+
+    public ResidentAI(UUID residentId, GameState state, Fridge fridge, BathroomResource bathroom, GameEventQueue eventQueue) {
         this.residentId = residentId;
         this.state = state;
         this.fridge = fridge;
+        this.bathroom = bathroom;
         this.eventQueue = eventQueue;
     }
 
@@ -73,6 +80,9 @@ public final class ResidentAI implements Runnable {
                 // Leave bathroom once hygiene is restored (probabilistic to spread exits)
                 if (self.getCurrentRoom() == Room.BATHROOM && self.getStatus().getHygiene() >= 70) {
                     if (random.nextInt(100) < 45) {
+                        if (bathroom != null) {
+                            bathroom.leave(self);
+                        }
                         setRoomIfNotDragged(self, Room.APARTMENT);
                     }
                 }

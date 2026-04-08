@@ -11,6 +11,7 @@ import com.palsandpalms.model.Resident;
 import com.palsandpalms.model.StarterResidents;
 import com.palsandpalms.persistence.AutoSaveTask;
 import com.palsandpalms.persistence.SaveManager;
+import com.palsandpalms.ui.IntroductionRegistry;
 import com.palsandpalms.world.BathroomResource;
 import com.palsandpalms.world.Fridge;
 import com.palsandpalms.world.GameEventQueue;
@@ -78,6 +79,7 @@ public final class GameSession {
     public void startNewGame() throws Exception {
         Files.createDirectories(saveDir);
         stopBackgroundThreads();
+        IntroductionRegistry.clear();
         state.getRwLock().writeLock().lock();
         try {
             state.clearAllResidentsAndRelationships();
@@ -94,6 +96,7 @@ public final class GameSession {
             state.getRwLock().writeLock().unlock();
         }
         fridge.setFoodUnits(20);
+        gameStarted = true;
         startBackgroundThreads();
     }
 
@@ -107,6 +110,7 @@ public final class GameSession {
             startNewGame();
             return;
         }
+        gameStarted = true;
         startBackgroundThreads();
     }
 
@@ -152,7 +156,7 @@ public final class GameSession {
         }
         for (Resident r : residents) {
             String threadName = "ResidentAI-" + r.getAppearance().getName();
-            ResidentAI ai = new ResidentAI(r.getId(), state, fridge, eventQueue);
+            ResidentAI ai = new ResidentAI(r.getId(), state, fridge, bathroom, eventQueue);
             residentAis.add(ai);
             aiPool.submit(() -> {
                 Thread.currentThread().setName(threadName);
@@ -186,11 +190,15 @@ public final class GameSession {
         threads.clear();
     }
 
+    private boolean gameStarted = false;
+
     public void shutdown() {
         stopBackgroundThreads();
-        try {
-            saveManager.save(state, fridge);
-        } catch (Exception ignored) {
+        if (gameStarted) {
+            try {
+                saveManager.save(state, fridge);
+            } catch (Exception ignored) {
+            }
         }
     }
 
@@ -207,7 +215,7 @@ public final class GameSession {
         } finally {
             state.getRwLock().readLock().unlock();
         }
-        ResidentAI ai = new ResidentAI(residentId, state, fridge, eventQueue);
+        ResidentAI ai = new ResidentAI(residentId, state, fridge, bathroom, eventQueue);
         residentAis.add(ai);
         aiPool.submit(() -> {
             Thread.currentThread().setName(threadName);

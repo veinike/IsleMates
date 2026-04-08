@@ -9,16 +9,30 @@ public final class Relationship {
     private final ReentrantLock lock = new ReentrantLock();
     private double value;
     private boolean friends;
+    /** Whether these two have had their intro conversation. */
+    private boolean introduced;
+    /** Whether one resident has developed romantic feelings (direction doesn't matter for simplicity). */
+    private boolean romanticFeelings;
+    /** Whether a confession has happened and was rejected. */
+    private boolean romanticRejected;
+    /** Whether a confession has happened and was accepted. */
+    private boolean romanticAccepted;
     /** Game tick until which resident A avoids B interaction (simplified: one direction). */
     private long avoidUntilTick;
 
     public Relationship() {
-        this(0, false, 0);
+        this(0, false, false, false, false, false, 0);
     }
 
-    public Relationship(double value, boolean friends, long avoidUntilTick) {
+    public Relationship(double value, boolean friends, boolean introduced,
+                        boolean romanticFeelings, boolean romanticRejected,
+                        boolean romanticAccepted, long avoidUntilTick) {
         this.value = StatusValues.clamp(value);
         this.friends = friends;
+        this.introduced = introduced;
+        this.romanticFeelings = romanticFeelings;
+        this.romanticRejected = romanticRejected;
+        this.romanticAccepted = romanticAccepted;
         this.avoidUntilTick = avoidUntilTick;
     }
 
@@ -39,6 +53,38 @@ public final class Relationship {
         return friends;
     }
 
+    public boolean isIntroduced() {
+        return introduced;
+    }
+
+    public void setIntroduced(boolean introduced) {
+        this.introduced = introduced;
+    }
+
+    public boolean hasRomanticFeelings() {
+        return romanticFeelings;
+    }
+
+    public void setRomanticFeelings(boolean romanticFeelings) {
+        this.romanticFeelings = romanticFeelings;
+    }
+
+    public boolean isRomanticRejected() {
+        return romanticRejected;
+    }
+
+    public void setRomanticRejected(boolean romanticRejected) {
+        this.romanticRejected = romanticRejected;
+    }
+
+    public boolean isRomanticAccepted() {
+        return romanticAccepted;
+    }
+
+    public void setRomanticAccepted(boolean romanticAccepted) {
+        this.romanticAccepted = romanticAccepted;
+    }
+
     public long getAvoidUntilTick() {
         return avoidUntilTick;
     }
@@ -49,5 +95,18 @@ public final class Relationship {
 
     public void addValue(double delta) {
         setValue(value + delta);
+    }
+
+    /**
+     * Returns the dialogue tier based on current relationship value.
+     * 0 = strangers (intro), 1 = acquaintances (0-29), 2 = friends (30-59),
+     * 3 = close friends (60-89), 4 = best friends (90+).
+     */
+    public int getDialogueTier() {
+        if (!introduced) return 0;
+        if (value < 30) return 1;
+        if (value < 60) return 2;
+        if (value < 90) return 3;
+        return 4;
     }
 }

@@ -47,7 +47,7 @@ public final class TutorialView {
             body("Die Statuswerte kannst du einsehen, indem du die Personen anklickst."),
 
             heading("InGame-Menü"),
-            body("Mit der ESC-Taste kommt man jederzeit ins InGame-Menü. Dort kann man bis zu zwei weitere BewohnerInnen erstellen und benennen, zurück zum Hauptmenü gehen oder das Spiel beenden.\n\n(Der Button zum Speichern des Spielstands ist fake – er funktioniert nicht. Man muss immer wieder ein neues Spiel starten, sorry.)"),
+            body("Mit der ESC-Taste kommt man jederzeit ins InGame-Menü. Dort kann man bis zu zwei weitere BewohnerInnen erstellen und benennen, zurück zum Hauptmenü gehen oder das Spiel beenden.\n\n(Der Button zum Speichern des Spielstands ist fake \u2013 er funktioniert nicht. Man muss immer wieder ein neues Spiel starten, sorry. (Prank, er funktioniert doch. Hab\u2019s gefixt))"),
 
             heading("Sonstige Hinweise"),
             body("In diesem Spiel gelten die Gesetze der Schwerkraft – was sehr lustig ist, wenn man die BewohnerInnen nimmt und wirft. Außerdem gibt es Tageszeiten und sich bewegende Wolken. Nur ein kurzer Side Fact, weil ja, ist 'ne Erwähnung wert."),

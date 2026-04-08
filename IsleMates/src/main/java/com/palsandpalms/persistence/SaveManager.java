@@ -17,6 +17,7 @@ import com.palsandpalms.model.ResidentAppearance;
 import com.palsandpalms.model.Room;
 import com.palsandpalms.model.SkinTone;
 import com.palsandpalms.model.StatusValues;
+import com.palsandpalms.ui.IntroductionRegistry;
 import com.palsandpalms.world.Fridge;
 
 import java.io.IOException;
@@ -87,7 +88,13 @@ public final class SaveManager {
                     RelationshipPair pair = RelationshipPair.of(a, b);
                     GameSaveData.RelationshipData rd = e.getValue();
                     state.getRelationships().put(pair,
-                            new Relationship(rd.getValue(), rd.isFriends(), rd.getAvoidUntilTick()));
+                            new Relationship(rd.getValue(), rd.isFriends(),
+                                    rd.isIntroduced(), rd.isRomanticFeelings(),
+                                    rd.isRomanticRejected(), rd.isRomanticAccepted(),
+                                    rd.getAvoidUntilTick()));
+                    if (rd.isIntroduced()) {
+                        IntroductionRegistry.markIntroduced(a, b);
+                    }
                 }
             }
             if (data.getDayNightCycleMs() != null) {
@@ -119,6 +126,10 @@ public final class SaveManager {
                 GameSaveData.RelationshipData rd = new GameSaveData.RelationshipData();
                 rd.setValue(rel.getValue());
                 rd.setFriends(rel.isFriends());
+                rd.setIntroduced(rel.isIntroduced());
+                rd.setRomanticFeelings(rel.hasRomanticFeelings());
+                rd.setRomanticRejected(rel.isRomanticRejected());
+                rd.setRomanticAccepted(rel.isRomanticAccepted());
                 rd.setAvoidUntilTick(rel.getAvoidUntilTick());
                 data.getRelationships().put(key, rd);
             }

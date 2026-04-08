@@ -208,6 +208,10 @@ public final class GameSaveData {
     public static final class RelationshipData {
         private double value;
         private boolean friends;
+        private boolean introduced;
+        private boolean romanticFeelings;
+        private boolean romanticRejected;
+        private boolean romanticAccepted;
         private long avoidUntilTick;
 
         public double getValue() {
@@ -224,6 +228,38 @@ public final class GameSaveData {
 
         public void setFriends(boolean friends) {
             this.friends = friends;
+        }
+
+        public boolean isIntroduced() {
+            return introduced;
+        }
+
+        public void setIntroduced(boolean introduced) {
+            this.introduced = introduced;
+        }
+
+        public boolean isRomanticFeelings() {
+            return romanticFeelings;
+        }
+
+        public void setRomanticFeelings(boolean romanticFeelings) {
+            this.romanticFeelings = romanticFeelings;
+        }
+
+        public boolean isRomanticRejected() {
+            return romanticRejected;
+        }
+
+        public void setRomanticRejected(boolean romanticRejected) {
+            this.romanticRejected = romanticRejected;
+        }
+
+        public boolean isRomanticAccepted() {
+            return romanticAccepted;
+        }
+
+        public void setRomanticAccepted(boolean romanticAccepted) {
+            this.romanticAccepted = romanticAccepted;
         }
 
         public long getAvoidUntilTick() {

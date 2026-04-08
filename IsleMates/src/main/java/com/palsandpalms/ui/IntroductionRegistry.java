@@ -25,4 +25,8 @@ public final class IntroductionRegistry {
     public static void markIntroduced(UUID a, UUID b) {
         INTRODUCED.add(RelationshipPair.of(a, b));
     }
+
+    public static void clear() {
+        INTRODUCED.clear();
+    }
 }

@@ -1,100 +1,79 @@
 {
   "residents": [
     {
-      "id": "619746a3-546e-42f3-acd2-3a47fa618dc6",
+      "id": "b1972cad-1526-4557-a443-09289488dcbf",
       "name": "Nina",
       "gender": "FEMALE",
       "hairColor": "BLONDE",
       "hairLength": "SHORT",
       "eyeColor": "BLUE",
       "skinTone": "LIGHT",
-      "hunger": 0.0,
-      "tiredness": 84.80000000000014,
-      "mood": 0.0,
-      "hygiene": 0.0,
+      "hunger": 63.20000000000016,
+      "tiredness": 21.19999999999996,
+      "mood": 84.40000000000032,
+      "hygiene": 71.59999999999968,
       "currentRoom": "APARTMENT",
-      "inventoryItemTypes": [
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE"
-      ]
+      "inventoryItemTypes": []
     },
     {
-      "id": "96078a11-32fe-4019-9296-08a61167d8f7",
+      "id": "879417fb-79b9-4b1e-9a9a-468551c15fdd",
       "name": "Victoria",
       "gender": "FEMALE",
       "hairColor": "BLACK",
       "hairLength": "SHORT",
       "eyeColor": "BLUE",
       "skinTone": "LIGHT",
-      "hunger": 0.0,
-      "tiredness": 84.50000000000014,
-      "mood": 0.0,
-      "hygiene": 0.0,
+      "hunger": 62.90000000000016,
+      "tiredness": 21.39999999999996,
+      "mood": 99.20000000000005,
+      "hygiene": 71.44999999999968,
       "currentRoom": "APARTMENT",
-      "inventoryItemTypes": [
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE"
-      ]
+      "inventoryItemTypes": []
     },
     {
-      "id": "6adbe8eb-5dec-407a-8d56-633257200d7c",
-      "name": "Frau Nerz",
+      "id": "d7a3bcdf-7988-49a4-84fa-99bc2cf38a72",
+      "name": "frau nerz",
       "gender": "FEMALE",
-      "hairColor": "BROWN",
+      "hairColor": "BLONDE",
       "hairLength": "LONG",
       "eyeColor": "BLUE",
       "skinTone": "LIGHT",
-      "hunger": 0.0,
-      "tiredness": 84.20000000000014,
-      "mood": 0.0,
-      "hygiene": 0.0,
+      "hunger": 74.60000000000005,
+      "tiredness": 13.599999999999987,
+      "mood": 98.2000000000001,
+      "hygiene": 77.2999999999999,
       "currentRoom": "APARTMENT",
-      "inventoryItemTypes": [
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE",
-        "APPLE"
-      ]
+      "inventoryItemTypes": []
     }
   ],
   "relationships": {
-    "619746a3-546e-42f3-acd2-3a47fa618dc6_6adbe8eb-5dec-407a-8d56-633257200d7c": {
+    "879417fb-79b9-4b1e-9a9a-468551c15fdd_b1972cad-1526-4557-a443-09289488dcbf": {
       "value": 0.0,
       "friends": false,
-      "avoidUntilTick": 9343
+      "introduced": false,
+      "romanticFeelings": false,
+      "romanticRejected": false,
+      "romanticAccepted": false,
+      "avoidUntilTick": 0
     },
-    "96078a11-32fe-4019-9296-08a61167d8f7_6adbe8eb-5dec-407a-8d56-633257200d7c": {
+    "879417fb-79b9-4b1e-9a9a-468551c15fdd_d7a3bcdf-7988-49a4-84fa-99bc2cf38a72": {
       "value": 0.0,
       "friends": false,
-      "avoidUntilTick": 9606
-    },
-    "96078a11-32fe-4019-9296-08a61167d8f7_619746a3-546e-42f3-acd2-3a47fa618dc6": {
-      "value": 5.0,
-      "friends": false,
-      "avoidUntilTick": 8803
+      "introduced": true,
+      "romanticFeelings": false,
+      "romanticRejected": false,
+      "romanticAccepted": false,
+      "avoidUntilTick": 0
     }
   },
-  "timeOfDay": "NIGHT",
-  "dayNightCycleMs": 293800,
-  "gameTick": 10138,
+  "timeOfDay": "MORNING",
+  "dayNightCycleMs": 27800,
+  "gameTick": 278,
   "activeGlobalEvents": [
     "CONCERT",
-    "DELIVERY",
-    "RAINY_DAY",
-    "BIRTHDAY"
+    "BIRTHDAY",
+    "DELIVERY"
   ],
   "tutorialCompleted": true,
-  "fridgeFoodUnits": 0
+  "fridgeFoodUnits": 20
 }

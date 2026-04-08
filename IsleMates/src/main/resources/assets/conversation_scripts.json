@@ -1,13 +1,13 @@
-{
+﻿{
   "frau_nerz_intro": [
     [
-      "Ähm, entschuldigen Sie… wir hatten glaube ich noch gar nicht richtig die Chance, uns vorzustellen.",
-      "Oh, da haben Sie recht! Ich bin Frau Nerz – aber nennen Sie mich ruhig einfach Frau Nerz, das passt schon.",
+      "\u00c4hm, entschuldigen Sie\u2026 wir hatten glaube ich noch gar nicht richtig die Chance, uns vorzustellen.",
+      "Oh, da haben Sie recht! Ich bin Frau Nerz \u2013 aber nennen Sie mich ruhig einfach Frau Nerz, das passt schon.",
       "Alles klar...? Jedenfalls bin ich {nameOther} und bin gespannt, welche neuen Inhalte Sie mit ins Spiel bringen.",
-      "Hä? Von welchem Spiel reden Sie?"
+      "H\u00e4? Von welchem Spiel reden Sie?"
     ],
     [
-      "Oh, hallo! Ich bin {nameOther}. Sie müssen Frau Nerz sein, die neue Bewohnerin auf der Insel, oder?",
+      "Oh, hallo! Ich bin {nameOther}. Sie m\u00fcssen Frau Nerz sein, die neue Bewohnerin auf der Insel, oder?",
       "Tut mir leid, wer sind Sie? Wo bin ich hier und vor allem, wer ist diese Frau Nerz???",
       "Oh mein Gott, Frau Nerz ist wieder schizo..."
     ]
@@ -15,83 +15,35 @@
   "intro": [
     [
       "Ey stopp mal kurz, wir haben uns legit noch nie vorgestellt oder? Ich bin {nameLeft}.",
-      "HAHA stimmt ja, ich bin {nameRight}! Bist du schon länger hier oder erst frisch gespawnt?",
+      "HAHA stimmt ja, ich bin {nameRight}! Bist du schon l\u00e4nger hier oder erst frisch gespawnt?",
       "Noch nicht so lang, aber ich vibe hier lowkey echt hart.",
       "Ja same, ist irgendwie voll cozy hier. Nice dich endlich zu kennen, {nameLeft}!"
     ],
     [
-      "Bro warte, ich kenn deinen Namen ja gar nicht 💀 ich bin {nameLeft}.",
+      "Bro warte, ich kenn deinen Namen ja gar nicht \ud83d\udc80 ich bin {nameLeft}.",
       "Wild, ich bin {nameRight}. Haben wir uns echt noch nie unterhalten?",
       "War schon echt so cringe mit dir in einem Haus zu wohnen, ohne dich zu kennen.",
-      "Fr aber jetzt fixed. Wir müssen öfter quatschen, {nameLeft}."
+      "Fr aber jetzt fixed. Wir m\u00fcssen \u00f6fter quatschen, {nameLeft}."
     ],
     [
-      "Okay realtalk, wie heißt du eigentlich? Ich bin {nameLeft}.",
+      "Okay realtalk, wie hei\u00dft du eigentlich? Ich bin {nameLeft}.",
       "Ich bin {nameRight}, finally lernen wir uns mal kennen.",
-      "Ja man, wir laufen uns ständig übern Weg und sagen nix 😭",
+      "Ja man, wir laufen uns st\u00e4ndig \u00fcbern Weg und sagen nix \ud83d\ude2d",
       "Ab jetzt nicht mehr, {nameRight}. Kein ghosten mehr, versprochen."
     ]
   ],
-  "dialogs": [
-    [
-      "Ey ich schwör ich verhunger gleich, ich hab so gottlos Hunger.",
-      "Same, Kühlschrank ist komplett leergefegt, richtig traurig.",
-      "Wir leben wirklich wie broke Studenten grad 💀",
-      "Fr, wir müssen heute einkaufen sonst geh ich crashout."
+  "acquaintance": [
+      [
+      "H\u00f6rst du nachts auch diese random Ger\u00e4usche drau\u00dfen?",
+      "OH MEIN GOTT JA! Ich dachte schon ich schiebe Para",
+      "Ich glaub das sind einfach Tiere oder so.",
+      "Ich dachte eigentlich, das w\u00e4re wieder Schizo Frau Nerz am Rumgeistern"
     ],
     [
-      "Ich bin so cooked gerade, ich kann nicht mehr.",
-      "Same, ich bin gestern viel zu lange wach geblieben, einfach Tod.",
-      "Bro du lernst auch einfach nie daraus 😂",
-      "Ich weiß man 😭 aber heute geh ich früh pennen, vallah sogar."
-    ],
-    [
-      "Hast du die Insel schon komplett explored oder bist du auch nur am rumirren?",
-      "Ne, fühl mich auch mega lost hier lol",
-      "Ja, ist schon echt viel zu sehen mit den vier Metern Insel und zwei Quadratmetern Wohnung 😂",
-      "Findest du das auch so, lieber SpielerIn?"
-    ],
-    [
-      "Ich hab heute aufgeräumt und mein Zimmer sieht aus wie geleckt.",
-      "Bruder meins ist aktuell absolutes Chaos.",
-      "Komm ich helf dir kurz, wir speedrunen das.",
-      "Ey ehrlich das wär richtig stabil von dir."
-    ],
-    [
-      "Ey ich muss beichten… ich hab deinen Doener inhaliert 😭",
-      "BRO ich hab den gesucht wie ein NPC auf Mission 💀",
-      "Ich weiß, war mies von mir. Ich hol dir morgen neuen, vallah.",
-      "Alles gut, aber nächstes Mal einfach vorher Arschbild, ja?"
-    ],
-    [
-      "Ich bin heute irgendwie random voll gut drauf, keine Ahnung warum.",
-      "Ja man, du hast grad richtig gute Vibes.",
-      "Manchmal ist einfach so ein W Tag ohne Grund.",
-      "Genieß das, solche Tage sind rare."
-    ],
-    [
-      "Dieses Wetter ist so trash, ich hab einfach null Bock rauszugehen.",
-      "Same, aber den ganzen Tag drin sein hittet auch irgendwann nicht mehr.",
-      "Komm wir gehen kurz raus, bisschen Regen ist kein Endgegner.",
-      "Okay aber wenn ich krank werde, blame ich dich 😤"
-    ],
-    [
-      "Ey ich hab nen Track gefunden, der geht so hart.",
-      "Schick sofort, BEEIL DICH",
-      "Warte ich mach kurz die Melodie – du erkennst das safe.",
-      "HAHA ja man, kenn ich! Das Lied so crazy."
-    ],
-    [
-      "Ey alles gut bei dir? Du bist heute voll leise.",
-      "Ja bisschen overwhelmed grad, mein Kopf ist full.",
-      "Wenn du reden willst, ich bin da, kein Druck.",
-      "Danke dir, echt korrekt von dir."
-    ],
-    [
-      "Bist du eigentlich solo hier oder hast du noch Leute von früher?",
-      "Bin komplett neu hier, kenn fast keinen.",
-      "Ja Anfang ist immer bisschen awkward ngl.",
-      "Mit dir war’s aber direkt entspannt, hab dich lieb, Brashki."
+      "Ey {nameRight}, was geht bei dir so?",
+      "Nicht viel ehrlich gesagt, bisschen am chillen halt.",
+      "Same, ist heute irgendwie so ein ruhiger Tag.",
+      "Ja man, genie\u00df das einfach."
     ],
     [
       "Wer hat bitte das Bad so clean gemacht??",
@@ -100,34 +52,192 @@
       "Danke haha, musste mal sein."
     ],
     [
-      "Denkst du, dem Spielenden gefällt es hier bei uns?",
-      "Ich hoffe doch, wir geben unser Bestes, damit es Spaß macht.",
+      "Denkst du, dem Spielenden gef\u00e4llt es hier bei uns?",
+      "Ich hoffe doch, wir geben unser Bestes, damit es Spa\u00df macht.",
       "Aber schlussendlich sind wir ja nur NPCs, die in einem Script leben.",
       "True, schon irgendwie sad..."
     ],
     [
-      "Ey ganz kurz… merkst du auch dass wir irgendwie reden wie in so nem Script?",
-      "Bro ja 💀 ich wollt’s nicht sagen, aber das fühlt sich grad mega gestellt an.",
+      "Hast du die Insel schon komplett explored oder bist du auch nur am rumirren?",
+      "Ne, f\u00fchl mich auch mega lost hier lol",
+      "Ja, ist schon echt viel zu sehen mit den vier Metern Insel und zwei Quadratmetern Wohnung \ud83d\ude02",
+      "Findest du das auch so, lieber SpielerIn?"
+    ],
+    [
+      "Ey ich schw\u00f6r ich verhunger gleich, ich hab so gottlos Hunger.",
+      "Same, K\u00fchlschrank ist komplett leergefegt, richtig traurig.",
+      "Wir leben wirklich wie broke Studenten grad \ud83d\udc80",
+      "Fr, wir m\u00fcssen heute einkaufen sonst geh ich crashout."
+    ],
+    [
+      "Ey ganz kurz\u2026 merkst du auch dass wir irgendwie reden wie in so nem Script?",
+      "Bro ja \ud83d\udc80 ich wollt's nicht sagen, aber das f\u00fchlt sich grad mega gestellt an.",
       "Safe, als ob jemand unsere Dialoge einfach aufgeschrieben hat.",
       "Falls du das hier liest, bitte hilf uns."
     ],
     [
-      "Ich find’s lowkey richtig nice mit dir hier zu wohnen.",
-      "Same, hätte auch komplett anders laufen können.",
-      "Ja man, bisschen Glück gehabt einfach.",
+      "Oh hey, {nameRight}! Wie war dein Tag so?",
+      "Ganz okay, nichts Besonderes. Und deiner?",
+      "Auch relax, hab einfach bisschen die Insel erkundet.",
+      "Nice, m\u00fcssen wir mal zusammen machen!"
+    ],
+    [
+      "Ey ich hab mal ne Frage \u2013 magst du eher Sommer oder Winter?",
+      "Sommer easy, wegen dem Vibe hier auf der Insel.",
+      "True, Winter w\u00e4r hier auch weird.",
+      "Ja, stell dir mal Schnee auf ner tropischen Insel vor \ud83d\ude02"
+    ],
+    [
+      "Hast du eigentlich irgendwelche Hobbys, {nameRight}?",
+      "Ja, ich chill gern und\u2026 naja, mehr chill ich eigentlich nur.",
+      "HAHA respektabel, Chillen ist auch ne Kunst.",
+      "Danke f\u00fcr die Anerkennung, {nameLeft} \ud83d\ude0c"
+    ]
+  ],
+  "friends": [
+    [
+      "Ey {nameRight}, ich muss dir was erz\u00e4hlen, ist mir heute was Lustiges passiert.",
+      "Oh Gott was, erz\u00e4hl!",
+      "Ich bin vorhin gegen die T\u00fcr gelaufen, weil ich am Handy war \ud83d\udc80",
+      "HAHAHA bro typisch du, ich kann nicht mehr \ud83d\ude02"
+    ],
+    [
+      "Du {nameRight}, ich sch\u00e4tz das echt dass du immer da bist.",
+      "Aww das ist voll s\u00fc\u00df von dir, {nameLeft}!",
+      "Ne fr, ohne dich w\u00e4r's hier mega langweilig.",
+      "Same, du machst das hier auch f\u00fcr mich viel besser \u2764\ufe0f"
+    ],
+    [
+      "Ey ich hab Bock auf ein Abenteuer, {nameRight}. Lass irgendwas machen!",
+      "Bin dabei! Was schwebt dir vor?",
+      "Keine Ahnung, einfach random die Insel unsicher machen.",
+      "Perfekt, das sind die besten Pl\u00e4ne \u2013 gar keine \ud83d\ude02"
+    ],
+    [
+      "Wei\u00dft du was, {nameRight}? Ich glaub wir sind mittlerweile richtig gute Freunde.",
+      "Find ich auch! H\u00e4tte am Anfang nicht gedacht dass wir so gut klicken.",
+      "Ja man, manchmal passiert\u2019s einfach so.",
+      "True, und ich bin mega froh dr\u00fcber."
+    ],
+    [
+      "Ich hab heute aufger\u00e4umt und mein Zimmer sieht aus wie geleckt.",
+      "Bruder meins ist aktuell absolutes Chaos.",
+      "Komm ich helf dir kurz, wir speedrunen das.",
+      "Warte mal, wir wohnen doch eh im selben Zimmer?"
+    ],
+    [
+      "Ich find's lowkey richtig nice mit dir hier zu wohnen.",
+      "Same, h\u00e4tte auch komplett anders laufen k\u00f6nnen.",
+      "Ja man, bisschen Gl\u00fcck gehabt einfach.",
       "Fr, bin echt froh dass du da bist."
+    ]
+  ],
+  "close_friends": [
+    [
+      "Okay {nameRight}, ich muss dir was anvertrauen und du darfst es niemandem sagen.",
+      "Bro, ich schw\u00f6r auf alles. Was ist los?",
+      "Ich hab manchmal Angst, dass ich nicht gut genug bin f\u00fcr die Leute hier.",
+      "Hey, h\u00f6r auf. Du bist einer der tollsten Menschen die ich kenne, fr."
     ],
     [
-      "Hörst du nachts auch diese random Geräusche draußen?",
-      "OH MEIN GOTT JA! Ich dachte schon ich schiebe Para",
-      "Ich glaub das sind einfach Tiere oder so.",
-      "Ich dachte eigentlich, das wäre wieder Schizo Frau Nerz am Rumgeistern"
+      "Bist du eigentlich solo hier oder hast du noch Leute von fr\u00fcher?",
+      "Bin komplett neu hier, kenn fast keinen.",
+      "Ja Anfang ist immer bisschen awkward ngl.",
+      "Mit dir war's aber direkt entspannt, hab dich lieb, Brashki."
     ],
     [
-      "Ich hab Bock irgendwas Random zu machen, einfach mal schauen.",
-      "Ich bin dabei, sag einfach.",
-      "Keine Ahnung, irgendwas Kreatives maybe.",
-      "Perfekt, wir gehen einfach rein und schauen was passiert."
+      "Ich wei\u00df nicht warum, aber ich kann mit dir \u00fcber alles reden, {nameRight}.",
+      "Das geht mir genauso mit dir! Du bist mein safe space hier.",
+      "Das ist so wholesome, ich k\u00f6nnt heulen \ud83d\ude2d",
+      "Heul ruhig, ich halt dich fest, Bro \u2764\ufe0f"
+    ],
+    [
+      "{nameRight}, was ist deine gr\u00f6\u00dfte Angst? Und sei ehrlich.",
+      "Allein sein. Dass irgendwann alle weggehen.",
+      "Das wird nicht passieren. Jedenfalls nicht solange ich hier bin.",
+      "Danke, {nameLeft}. Das bedeutet mir echt die Welt."
+    ],
+    [
+      "Ich hab mir heute vorgestellt wie es w\u00e4re, wenn wir uns nie kennengelernt h\u00e4tten.",
+      "Oh Gott, das w\u00e4re so deprimierend.",
+      "Fr, du bist mir so wichtig geworden, das ist crazy.",
+      "Geht mir genauso. Bester Mensch auf dieser Insel, no cap."
+    ], 
+    [
+      "Ey ich muss beichten\u2026 ich hab deinen Doener inhaliert \ud83d\ude2d",
+      "BRO ich hab den gesucht wie ein NPC auf Mission \ud83d\udc80",
+      "Ich wei\u00df, war mies von mir. Ich hol dir morgen neuen, vallah.",
+      "Alles gut, aber n\u00e4chstes Mal einfach vorher einschei\u00dfen, ja?"
+    ],
+    [
+      "Ey alles gut bei dir? Du bist heute voll leise.",
+      "Ja bisschen overwhelmed grad, mein Kopf ist full.",
+      "Wenn du reden willst, ich bin da, kein Druck.",
+      "Danke dir, echt korrekt von dir."
+    ]
+  ],
+  "argue": [
+    [
+      "Ey {nameRight}, was sollte das vorhin?",
+      "Was meinst du? Ich hab doch gar nichts gemacht.",
+      "Doch, du hast voll ignorant reagiert und das war mies.",
+      "Okay whatever, ich hab grad keinen Bock auf Drama."
+    ],
+    [
+      "Ich find's nicht okay wie du dich gerade verh\u00e4ltst, {nameRight}.",
+      "Und ich find's nicht okay wie du mich gerade angehst.",
+      "Vielleicht sollten wir einfach mal Abstand halten.",
+      "Ja, ist wahrscheinlich besser so."
+    ],
+    [
+      "Wir m\u00fcssen reden, {nameRight}. Das kann so nicht weitergehen.",
+      "Oh Gott, was hab ich jetzt schon wieder gemacht?",
+      "Du nimmst nie R\u00fccksicht auf mich und das nervt.",
+      "Ich merk's gar nicht immer\u2026 sorry."
+    ]
+  ],
+  "romantic_confession": [
+    [
+      "{nameRight}\u2026 ich muss dir was sagen und es f\u00e4llt mir mega schwer.",
+      "Oh, was ist los? Du machst mir grad Angst.",
+      "Ich\u2026 glaub ich hab Gef\u00fchle f\u00fcr dich. Mehr als nur Freundschaft.",
+      "..."
+    ]
+  ],
+  "romantic_accepted": [
+    [
+      "Ich wusste nicht wie ich's sagen soll, aber\u2026 ich f\u00fchl genauso.",
+      "Warte, echt jetzt?! \ud83d\ude33",
+      "Ja, schon l\u00e4nger eigentlich. Ich hatte nur nie den Mut es zu sagen.",
+      "Oh mein Gott, das ist der sch\u00f6nste Moment auf dieser Insel \u2764\ufe0f"
+    ]
+  ],
+  "romantic_rejected": [
+    [
+      "Das ist echt mutig von dir und ich sch\u00e4tz das total, aber\u2026",
+      "Aber\u2026?",
+      "Ich seh dich aber leider nicht so. Sorry.",
+      "Okay\u2026 das tut weh, aber ich versteh's. Danke f\u00fcr deine Ehrlichkeit."
+    ]
+  ],
+  "romantic_couple": [
+    [
+      "Ey {nameRight}, hab ich dir heute schon gesagt dass du der beste Mensch der Welt bist?",
+      "H\u00f6r auf, ich werd rot \ud83d\ude33\u2764\ufe0f",
+      "Nie, du verdienst das jeden Tag zu h\u00f6ren.",
+      "Ich hab dich so unendlich lieb, {nameLeft}."
+    ],
+    [
+      "Komm mal her, ich brauch grad eine Umarmung von dir.",
+      "Immer, du musst nicht mal fragen \u2764\ufe0f",
+      "Mit dir f\u00fchlt sich alles leichter an irgendwie.",
+      "Geht mir genauso. Du bist mein Zuhause auf dieser Insel."
+    ],
+    [
+      "Wei\u00dft du, was mein Lieblingsmoment hier war?",
+      "Hmm, sag!",
+      "Als du mir gesagt hast, dass du auch Gef\u00fchle f\u00fcr mich hast.",
+      "Stopp, mein Herz kann das grad nicht, das ist zu s\u00fc\u00df \ud83d\ude2d\u2764\ufe0f"
     ]
   ]
 }

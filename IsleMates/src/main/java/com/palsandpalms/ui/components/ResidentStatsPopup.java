@@ -58,16 +58,19 @@ public final class ResidentStatsPopup {
         panel.setPadding(new Insets(14));
         panel.setStyle("-fx-background-color: rgba(30,30,45,0.92); -fx-background-radius: 12;");
         panel.setMaxWidth(260);
+        panel.setMinHeight(300);
+        panel.setMaxHeight(300);
+        panel.setPrefHeight(300);
         panel.setOnMouseClicked(e -> e.consume());
 
-        StackPane.setAlignment(panel, Pos.TOP_LEFT);
+        StackPane.setAlignment(panel, Pos.BOTTOM_LEFT);
         Point2D local = host.sceneToLocal(anchorSceneX, anchorSceneY);
         if (local == null) {
             local = new Point2D(16, 16);
         }
-        double panelH = 260;
-        double topInset = Math.max(8, local.getY() - panelH - 10);
-        StackPane.setMargin(panel, new Insets(topInset, 0, 0, Math.max(8, local.getX())));
+        double hostH = host.getHeight();
+        double bottomInset = Math.max(8, hostH - local.getY());
+        StackPane.setMargin(panel, new Insets(0, 0, bottomInset, Math.max(8, local.getX())));
 
         dim.getChildren().add(panel);
         host.getChildren().add(dim);

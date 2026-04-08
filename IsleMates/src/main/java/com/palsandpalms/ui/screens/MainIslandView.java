@@ -12,7 +12,7 @@ import com.palsandpalms.ui.SpriteButton;
 import com.palsandpalms.ui.components.AnimatedResident;
 import com.palsandpalms.ui.components.ConversationOverlay;
 import com.palsandpalms.ui.components.ResidentHudBar;
-import com.palsandpalms.ui.components.ResidentPositionDebugPane;
+
 import com.palsandpalms.ui.components.ResidentStatsPopup;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -150,10 +150,7 @@ public final class MainIslandView {
         StackPane.setMargin(hudWrap, new Insets(15));
         root.getChildren().add(hudWrap);
 
-        ResidentPositionDebugPane debugPane = new ResidentPositionDebugPane();
-        StackPane.setAlignment(debugPane, Pos.TOP_RIGHT);
-        StackPane.setMargin(debugPane, new Insets(15));
-        root.getChildren().add(debugPane);
+
 
         javafx.animation.AnimationTimer ticker = new javafx.animation.AnimationTimer() {
             @Override
@@ -207,7 +204,8 @@ public final class MainIslandView {
                                                 if (oth != null
                                                         && AnimatedResident.showOnIsland(self)
                                                         && AnimatedResident.showOnIsland(oth)) {
-                                                    ConversationOverlay.show(root, self, oth);
+                                                    var rel = state.getOrCreateRelationship(self.getId(), oth.getId());
+                                                    ConversationOverlay.show(root, self, oth, rel);
                                                     return;
                                                 }
                                             } finally {
@@ -248,7 +246,6 @@ public final class MainIslandView {
                         }
                     }
                     hud.update(state, sprites);
-                    debugPane.update(state, sprites);
                 } finally {
                     state.getRwLock().readLock().unlock();
                 }

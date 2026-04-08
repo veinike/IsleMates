@@ -20,6 +20,7 @@ public final class MainMenuView {
     }
 
     public static StackPane create(
+            Runnable onContinue,
             Runnable onStartNew,
             Runnable onExit,
             Runnable onRules) {
@@ -32,7 +33,7 @@ public final class MainMenuView {
         bg.setPreserveRatio(false);
         root.getChildren().add(bg);
 
-        HBox buttonBar = new HBox(100);
+        HBox buttonBar = new HBox(20);
         buttonBar.setAlignment(Pos.BOTTOM_CENTER);
         StackPane.setAlignment(buttonBar, Pos.BOTTOM_CENTER);
         StackPane.setMargin(buttonBar, new Insets(0, 0, 32, 0));
@@ -40,20 +41,32 @@ public final class MainMenuView {
         var btnW = Bindings.createDoubleBinding(
                 () -> Math.max(48, root.getWidth() * 0.20),
                 root.widthProperty());
+        var btnH = Bindings.createDoubleBinding(
+                () -> Math.max(24, root.getHeight() * 0.08 + 10),
+                root.heightProperty());
+
+        ImageView btnContinue = new ImageView(AssetLoader.loadImageNatural(GameAssets.MAIN_MENU_START_CONTINUE));
+        btnContinue.setPreserveRatio(false);
+        btnContinue.fitWidthProperty().bind(btnW);
+        btnContinue.fitHeightProperty().bind(btnH);
+        SpriteButton.styleAsButton(btnContinue);
+        btnContinue.setOnMouseClicked(e -> onContinue.run());
 
         ImageView btnNew = new ImageView(AssetLoader.loadImageNatural(GameAssets.MAIN_MENU_START_NEW));
-        btnNew.setPreserveRatio(true);
+        btnNew.setPreserveRatio(false);
         btnNew.fitWidthProperty().bind(btnW);
+        btnNew.fitHeightProperty().bind(btnH);
         SpriteButton.styleAsButton(btnNew);
         btnNew.setOnMouseClicked(e -> onStartNew.run());
 
         ImageView btnExit = new ImageView(AssetLoader.loadImageNatural(GameAssets.MAIN_MENU_EXIT));
-        btnExit.setPreserveRatio(true);
+        btnExit.setPreserveRatio(false);
         btnExit.fitWidthProperty().bind(btnW);
+        btnExit.fitHeightProperty().bind(btnH);
         SpriteButton.styleAsButton(btnExit);
         btnExit.setOnMouseClicked(e -> onExit.run());
 
-        buttonBar.getChildren().addAll(btnNew, btnExit);
+        buttonBar.getChildren().addAll(btnContinue, btnNew, btnExit);
         root.getChildren().add(buttonBar);
 
         Label rules = new Label("Regeln lesen");

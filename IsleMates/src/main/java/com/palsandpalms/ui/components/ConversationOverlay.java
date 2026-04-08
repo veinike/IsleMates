@@ -2,6 +2,7 @@ package com.palsandpalms.ui.components;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
+import com.palsandpalms.model.Relationship;
 import com.palsandpalms.model.Resident;
 import com.palsandpalms.ui.AppFonts;
 import com.palsandpalms.ui.IntroductionRegistry;
@@ -49,6 +50,14 @@ public final class ConversationOverlay {
     private static List<String[]> introScripts;
     private static List<String[]> dialogScripts;
     private static List<String[]> frauNerzIntroScripts;
+    private static List<String[]> acquaintanceScripts;
+    private static List<String[]> friendsScripts;
+    private static List<String[]> closeFriendsScripts;
+    private static List<String[]> argueScripts;
+    private static List<String[]> confessionScripts;
+    private static List<String[]> acceptedScripts;
+    private static List<String[]> rejectedScripts;
+    private static List<String[]> coupleScripts;
 
     private ConversationOverlay() {
     }
@@ -72,6 +81,14 @@ public final class ConversationOverlay {
             introScripts      = parseScriptList(root.getAsJsonArray("intro"));
             dialogScripts     = parseScriptList(root.getAsJsonArray("dialogs"));
             frauNerzIntroScripts = parseScriptList(root.getAsJsonArray("frau_nerz_intro"));
+            acquaintanceScripts = parseScriptList(root.getAsJsonArray("acquaintance"));
+            friendsScripts = parseScriptList(root.getAsJsonArray("friends"));
+            closeFriendsScripts = parseScriptList(root.getAsJsonArray("close_friends"));
+            argueScripts = parseScriptList(root.getAsJsonArray("argue"));
+            confessionScripts = parseScriptList(root.getAsJsonArray("romantic_confession"));
+            acceptedScripts = parseScriptList(root.getAsJsonArray("romantic_accepted"));
+            rejectedScripts = parseScriptList(root.getAsJsonArray("romantic_rejected"));
+            coupleScripts = parseScriptList(root.getAsJsonArray("romantic_couple"));
         } catch (Exception e) {
             loadFallback();
         }
@@ -102,6 +119,54 @@ public final class ConversationOverlay {
             "Ich heiß {nameRight}, freut mich!",
             "Schön dich kennenzulernen, {nameRight}.",
             "Genauso, {nameLeft} – lass uns öfter reden!"
+        });
+        acquaintanceScripts = Collections.singletonList(new String[]{
+            "Hey {nameRight}, wie geht's?",
+            "Ganz gut, danke! Und dir?",
+            "Auch, chillen halt.",
+            "Nice, nice."
+        });
+        friendsScripts = Collections.singletonList(new String[]{
+            "Ey {nameRight}, ich muss dir was erzählen!",
+            "Oh Gott was, erzähl!",
+            "War mega lustig vorhin.",
+            "HAHA bro, typisch du!"
+        });
+        closeFriendsScripts = Collections.singletonList(new String[]{
+            "Ich kann mit dir über alles reden, {nameRight}.",
+            "Geht mir genauso!",
+            "Das ist so wholesome.",
+            "Hab dich lieb, Bro."
+        });
+        argueScripts = Collections.singletonList(new String[]{
+            "Was sollte das vorhin, {nameRight}?",
+            "Was meinst du?",
+            "Das war nicht okay.",
+            "Whatever."
+        });
+        confessionScripts = Collections.singletonList(new String[]{
+            "{nameRight}… ich hab Gefühle für dich.",
+            "Oh… wirklich?",
+            "Ja, mehr als nur Freundschaft.",
+            "..."
+        });
+        acceptedScripts = Collections.singletonList(new String[]{
+            "Ich fühl genauso.",
+            "Echt?!",
+            "Ja, schon länger.",
+            "Das ist der schönste Moment!"
+        });
+        rejectedScripts = Collections.singletonList(new String[]{
+            "Das ist mutig von dir, aber…",
+            "Aber…?",
+            "Ich seh dich eher als Freund.",
+            "Okay… das tut weh, aber danke."
+        });
+        coupleScripts = Collections.singletonList(new String[]{
+            "Hab ich dir heute schon gesagt dass du toll bist?",
+            "Hör auf, ich werd rot!",
+            "Nie, du verdienst das jeden Tag.",
+            "Hab dich so lieb."
         });
         dialogScripts = Collections.singletonList(new String[]{
             "Bro, wie geht's dir so?",
@@ -138,11 +203,19 @@ public final class ConversationOverlay {
     // -------------------------------------------------------------------------
 
     public static void show(StackPane host, Resident left, Resident right) {
+        show(host, left, right, null);
+    }
+
+    public static void show(StackPane host, Resident left, Resident right, Relationship rel) {
         dismiss(host);
         ensureScriptsLoaded();
 
-        boolean isIntro = !IntroductionRegistry.hasBeenIntroduced(
-                left.getId(), right.getId());
+        boolean isIntro;
+        if (rel != null) {
+            isIntro = !rel.isIntroduced();
+        } else {
+            isIntro = !IntroductionRegistry.hasBeenIntroduced(left.getId(), right.getId());
+        }
 
         // For Frau Nerz intro scripts the other resident always speaks first (left).
         // Swap so Frau Nerz is always on the right (odd message indices).
@@ -157,14 +230,89 @@ public final class ConversationOverlay {
 
         boolean hasFrauNerz = FRAU_NERZ.equals(nameLeft) || FRAU_NERZ.equals(nameRight);
 
+        // Determine romantic event for this conversation
+        boolean confessionHappening = false;
+        boolean confessionAccepted = false;
+
         String[] script;
-        if (!isIntro) {
-            script = applyNames(randomScript(dialogScripts), nameLeft, nameRight);
-        } else if (hasFrauNerz) {
-            String nameOther = FRAU_NERZ.equals(nameLeft) ? nameRight : nameLeft;
-            script = applyFrauNerzNames(randomScript(frauNerzIntroScripts), nameOther);
+        if (isIntro) {
+            if (hasFrauNerz) {
+                String nameOther = FRAU_NERZ.equals(nameLeft) ? nameRight : nameLeft;
+                script = applyFrauNerzNames(randomScript(frauNerzIntroScripts), nameOther);
+            } else {
+                script = applyNames(randomScript(introScripts), nameLeft, nameRight);
+            }
+        } else if (rel != null && rel.isRomanticAccepted()) {
+            // They're a couple
+            script = applyNames(randomScript(coupleScripts), nameLeft, nameRight);
+        } else if (rel != null && !rel.hasRomanticFeelings() && !rel.isRomanticRejected()
+                   && rel.getValue() >= 60
+                   && ThreadLocalRandom.current().nextDouble() < 0.12) {
+            // Random chance to develop romantic feelings at high relationship
+            rel.setRomanticFeelings(true);
+            confessionHappening = true;
+            confessionAccepted = ThreadLocalRandom.current().nextDouble() < 0.55;
+            // Build a two-part script: confession + result
+            String[] confPart = applyNames(randomScript(confessionScripts), nameLeft, nameRight);
+            String[] resultPart;
+            if (confessionAccepted) {
+                resultPart = applyNames(randomScript(acceptedScripts), nameLeft, nameRight);
+                rel.setRomanticAccepted(true);
+                rel.addValue(25);
+            } else {
+                resultPart = applyNames(randomScript(rejectedScripts), nameLeft, nameRight);
+                rel.setRomanticRejected(true);
+                rel.addValue(-30);
+            }
+            String[] combined = new String[confPart.length + resultPart.length];
+            System.arraycopy(confPart, 0, combined, 0, confPart.length);
+            System.arraycopy(resultPart, 0, combined, confPart.length, resultPart.length);
+            script = combined;
+        } else if (rel != null && rel.hasRomanticFeelings() && !rel.isRomanticAccepted()
+                   && !rel.isRomanticRejected()
+                   && ThreadLocalRandom.current().nextDouble() < 0.20) {
+            // Feelings exist but no confession yet — trigger it
+            confessionHappening = true;
+            confessionAccepted = ThreadLocalRandom.current().nextDouble() < 0.55;
+            String[] confPart = applyNames(randomScript(confessionScripts), nameLeft, nameRight);
+            String[] resultPart;
+            if (confessionAccepted) {
+                resultPart = applyNames(randomScript(acceptedScripts), nameLeft, nameRight);
+                rel.setRomanticAccepted(true);
+                rel.addValue(25);
+            } else {
+                resultPart = applyNames(randomScript(rejectedScripts), nameLeft, nameRight);
+                rel.setRomanticRejected(true);
+                rel.addValue(-30);
+            }
+            String[] combined = new String[confPart.length + resultPart.length];
+            System.arraycopy(confPart, 0, combined, 0, confPart.length);
+            System.arraycopy(resultPart, 0, combined, confPart.length, resultPart.length);
+            script = combined;
         } else {
-            script = applyNames(randomScript(introScripts), nameLeft, nameRight);
+            // Tier-based dialogue selection
+            int tier = (rel != null) ? rel.getDialogueTier() : 1;
+            // Small chance of arguing when relationship is lower
+            boolean arguing = rel != null && rel.getValue() < 40
+                              && ThreadLocalRandom.current().nextDouble() < 0.08;
+            if (arguing) {
+                script = applyNames(randomScript(argueScripts), nameLeft, nameRight);
+                if (rel != null) {
+                    rel.addValue(-10);
+                }
+            } else {
+                List<String[]> pool = switch (tier) {
+                    case 1 -> acquaintanceScripts;
+                    case 2 -> friendsScripts;
+                    case 3 -> closeFriendsScripts;
+                    case 4 -> closeFriendsScripts;
+                    default -> dialogScripts;
+                };
+                script = applyNames(randomScript(pool), nameLeft, nameRight);
+                if (rel != null) {
+                    rel.addValue(5);
+                }
+            }
         }
         int maxMessages = script.length;
 
@@ -233,6 +381,7 @@ public final class ConversationOverlay {
         // Capture final references for lambda use after potential swap
         final Resident finalLeft  = left;
         final Resident finalRight = right;
+        final Relationship finalRel = rel;
 
         // Speaker is determined by messageIndex % 2 (0 = left, 1 = right)
         final Resident[] speakers = {finalLeft, finalRight};
@@ -286,6 +435,9 @@ public final class ConversationOverlay {
             if (messageIndex[0] >= maxMessages) {
                 if (isIntro) {
                     IntroductionRegistry.markIntroduced(finalLeft.getId(), finalRight.getId());
+                    if (finalRel != null) {
+                        finalRel.setIntroduced(true);
+                    }
                 }
                 doDismiss.run();
                 return;

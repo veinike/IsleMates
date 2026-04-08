@@ -39,6 +39,7 @@ public final class NavigationController {
         session.shutdown();
         session = new GameSession(saveDir);
         StackPane root = MainMenuView.create(
+                this::startOrContinue,
                 this::startNewGameOnly,
                 Platform::exit,
                 this::showRulesFromMenu);
@@ -63,10 +64,11 @@ public final class NavigationController {
             SaveManager sm = session.getSaveManager();
             if (sm.saveExists()) {
                 session.loadExistingSave();
+                showIsland();
             } else {
                 session.startNewGame();
+                afterStartOrLoad();
             }
-            afterStartOrLoad();
         } catch (Exception e) {
             error(e);
         }
@@ -181,6 +183,10 @@ public final class NavigationController {
     private void saveGame() {
         try {
             session.getSaveManager().save(session.getState(), session.getFridge());
+            Alert a = new Alert(Alert.AlertType.INFORMATION, "Dein Spielstand wurde gespeichert!");
+            a.setHeaderText("Spiel gespeichert");
+            AppFonts.styleDialog(a.getDialogPane());
+            a.showAndWait();
         } catch (Exception e) {
             error(e);
         }
