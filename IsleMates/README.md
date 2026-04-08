@@ -4,7 +4,7 @@ A Tomodachi Life-inspired 2D multithreaded island life simulation game built wit
 
 ## Where to find
 
-IsleMates\IsleMates\target\installer\IsleMates\IsleMates.exe"
+IsleMates\IsleMates\target\installer\IsleMates\IsleMates.exe
 
 ## How to play
 
