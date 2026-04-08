@@ -1,0 +1,4 @@
+--patch-module
+com.palsandpalms=_
+--add-reads
+com.palsandpalms=ALL-UNNAMED

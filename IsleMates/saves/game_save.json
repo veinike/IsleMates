@@ -1,56 +1,100 @@
 {
   "residents": [
     {
-      "id": "6bb27cde-04c9-46c8-b1db-330ca5c9fb36",
+      "id": "619746a3-546e-42f3-acd2-3a47fa618dc6",
       "name": "Nina",
       "gender": "FEMALE",
       "hairColor": "BLONDE",
       "hairLength": "SHORT",
       "eyeColor": "BLUE",
       "skinTone": "LIGHT",
-      "hunger": 42.50000000000088,
-      "tiredness": 85.00000000000067,
-      "mood": 48.5000000000007,
-      "hygiene": 23.74999999999978,
+      "hunger": 0.0,
+      "tiredness": 84.80000000000014,
+      "mood": 0.0,
+      "hygiene": 0.0,
       "currentRoom": "APARTMENT",
       "inventoryItemTypes": [
+        "APPLE",
+        "APPLE",
+        "APPLE",
+        "APPLE",
         "APPLE",
         "APPLE",
         "APPLE"
       ]
     },
     {
-      "id": "b1595d8d-fd3e-418b-ad17-0d7c17b0b3df",
+      "id": "96078a11-32fe-4019-9296-08a61167d8f7",
       "name": "Victoria",
       "gender": "FEMALE",
       "hairColor": "BLACK",
       "hairLength": "SHORT",
       "eyeColor": "BLUE",
       "skinTone": "LIGHT",
-      "hunger": 24.700000000000625,
-      "tiredness": 18.799999999999965,
-      "mood": 42.80000000000061,
-      "hygiene": 60.699999999998674,
-      "currentRoom": "PARK",
-      "inventoryItemTypes": []
+      "hunger": 0.0,
+      "tiredness": 84.50000000000014,
+      "mood": 0.0,
+      "hygiene": 0.0,
+      "currentRoom": "APARTMENT",
+      "inventoryItemTypes": [
+        "APPLE",
+        "APPLE",
+        "APPLE",
+        "APPLE",
+        "APPLE",
+        "APPLE"
+      ]
+    },
+    {
+      "id": "6adbe8eb-5dec-407a-8d56-633257200d7c",
+      "name": "Frau Nerz",
+      "gender": "FEMALE",
+      "hairColor": "BROWN",
+      "hairLength": "LONG",
+      "eyeColor": "BLUE",
+      "skinTone": "LIGHT",
+      "hunger": 0.0,
+      "tiredness": 84.20000000000014,
+      "mood": 0.0,
+      "hygiene": 0.0,
+      "currentRoom": "APARTMENT",
+      "inventoryItemTypes": [
+        "APPLE",
+        "APPLE",
+        "APPLE",
+        "APPLE",
+        "APPLE",
+        "APPLE",
+        "APPLE"
+      ]
     }
   ],
   "relationships": {
-    "b1595d8d-fd3e-418b-ad17-0d7c17b0b3df_6bb27cde-04c9-46c8-b1db-330ca5c9fb36": {
+    "619746a3-546e-42f3-acd2-3a47fa618dc6_6adbe8eb-5dec-407a-8d56-633257200d7c": {
       "value": 0.0,
       "friends": false,
-      "avoidUntilTick": 1227
+      "avoidUntilTick": 9343
+    },
+    "96078a11-32fe-4019-9296-08a61167d8f7_6adbe8eb-5dec-407a-8d56-633257200d7c": {
+      "value": 0.0,
+      "friends": false,
+      "avoidUntilTick": 9606
+    },
+    "96078a11-32fe-4019-9296-08a61167d8f7_619746a3-546e-42f3-acd2-3a47fa618dc6": {
+      "value": 5.0,
+      "friends": false,
+      "avoidUntilTick": 8803
     }
   },
-  "timeOfDay": "EVENING",
-  "dayNightCycleMs": 185600,
-  "gameTick": 1856,
+  "timeOfDay": "NIGHT",
+  "dayNightCycleMs": 293800,
+  "gameTick": 10138,
   "activeGlobalEvents": [
-    "RAINY_DAY",
     "CONCERT",
     "DELIVERY",
+    "RAINY_DAY",
     "BIRTHDAY"
   ],
   "tutorialCompleted": true,
-  "fridgeFoodUnits": 17
+  "fridgeFoodUnits": 0
 }

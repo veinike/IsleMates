@@ -1,56 +1,10 @@
-# Pals and Palms
+# IsleMates
 
 A Tomodachi Life-inspired 2D multithreaded island life simulation game built with JavaFX.
 
-## Prerequisites
+## Where to find
 
-- **Java 21** or newer ([Adoptium](https://adoptium.net/) or [Oracle JDK](https://www.oracle.com/java/technologies/downloads/))
-- **Maven 3.9+**
-
-### Installing prerequisites
-
-**macOS (Homebrew):**
-
-```bash
-brew install openjdk maven
-```
-
-**Windows (winget):**
-
-```powershell
-winget install EclipseAdoptium.Temurin.21.JDK
-winget install Apache.Maven
-```
-
-**Linux (apt):**
-
-```bash
-sudo apt install openjdk-21-jdk maven
-```
-
-Verify both are available:
-
-```bash
-java --version
-mvn --version
-```
-
-## Building and running
-
-```bash
-# Clone the repository
-git clone <repo-url>
-cd PalsAndPalms
-
-# Compile the project
-mvn compile
-
-# Run tests
-mvn test
-
-# Launch the game
-mvn javafx:run
-```
+IsleMates\IsleMates\target\installer\IsleMates\IsleMates.exe"
 
 ## How to play
 
@@ -70,9 +24,9 @@ mvn javafx:run
 
 | Furniture   | Effect                  |
 |-------------|-------------------------|
-| Kitchen     | Fills hunger to 100%    |
-| Sofa        | Resets tiredness to 0%  |
-| Toilet      | Enters bathroom, restores hygiene to 100% |
+| Kitchen     | Fills hunger            |
+| Sofa        | Resets tiredness        |
+| Toilet      | Enters bathroom, restores hygiene |
 
 ### Resident interactions
 
@@ -88,18 +42,6 @@ mvn javafx:run
 - Residents can **only enter the apartment** from the island when near the house (center of the island)
 - After exiting the bathroom, residents reappear near the bathroom door (right side of the apartment)
 
-### AI behavior
-
-- Each resident runs on their own thread and acts autonomously based on needs and time of day
-- When hungry, they head to the apartment to eat from the fridge
-- At night, they get tired and go home to rest
-- There is a 15-second grace period after any room switch before the AI will move a resident again
-- Player drag actions always override AI decisions and are never blocked by the cooldown
-
-### Saving
-
-- The game auto-saves every 30 seconds
-- You can also save manually from the game menu (ESC)
 
 ## Project structure
 

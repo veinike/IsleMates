@@ -1,0 +1,133 @@
+{
+  "frau_nerz_intro": [
+    [
+      "Ähm, entschuldigen Sie… wir hatten glaube ich noch gar nicht richtig die Chance, uns vorzustellen.",
+      "Oh, da haben Sie recht! Ich bin Frau Nerz – aber nennen Sie mich ruhig einfach Frau Nerz, das passt schon.",
+      "Alles klar...? Jedenfalls bin ich {nameOther} und bin gespannt, welche neuen Inhalte Sie mit ins Spiel bringen.",
+      "Hä? Von welchem Spiel reden Sie?"
+    ],
+    [
+      "Oh, hallo! Ich bin {nameOther}. Sie müssen Frau Nerz sein, die neue Bewohnerin auf der Insel, oder?",
+      "Tut mir leid, wer sind Sie? Wo bin ich hier und vor allem, wer ist diese Frau Nerz???",
+      "Oh mein Gott, Frau Nerz ist wieder schizo..."
+    ]
+  ],
+  "intro": [
+    [
+      "Ey stopp mal kurz, wir haben uns legit noch nie vorgestellt oder? Ich bin {nameLeft}.",
+      "HAHA stimmt ja, ich bin {nameRight}! Bist du schon länger hier oder erst frisch gespawnt?",
+      "Noch nicht so lang, aber ich vibe hier lowkey echt hart.",
+      "Ja same, ist irgendwie voll cozy hier. Nice dich endlich zu kennen, {nameLeft}!"
+    ],
+    [
+      "Bro warte, ich kenn deinen Namen ja gar nicht 💀 ich bin {nameLeft}.",
+      "Wild, ich bin {nameRight}. Haben wir uns echt noch nie unterhalten?",
+      "War schon echt so cringe mit dir in einem Haus zu wohnen, ohne dich zu kennen.",
+      "Fr aber jetzt fixed. Wir müssen öfter quatschen, {nameLeft}."
+    ],
+    [
+      "Okay realtalk, wie heißt du eigentlich? Ich bin {nameLeft}.",
+      "Ich bin {nameRight}, finally lernen wir uns mal kennen.",
+      "Ja man, wir laufen uns ständig übern Weg und sagen nix 😭",
+      "Ab jetzt nicht mehr, {nameRight}. Kein ghosten mehr, versprochen."
+    ]
+  ],
+  "dialogs": [
+    [
+      "Ey ich schwör ich verhunger gleich, ich hab so gottlos Hunger.",
+      "Same, Kühlschrank ist komplett leergefegt, richtig traurig.",
+      "Wir leben wirklich wie broke Studenten grad 💀",
+      "Fr, wir müssen heute einkaufen sonst geh ich crashout."
+    ],
+    [
+      "Ich bin so cooked gerade, ich kann nicht mehr.",
+      "Same, ich bin gestern viel zu lange wach geblieben, einfach Tod.",
+      "Bro du lernst auch einfach nie daraus 😂",
+      "Ich weiß man 😭 aber heute geh ich früh pennen, vallah sogar."
+    ],
+    [
+      "Hast du die Insel schon komplett explored oder bist du auch nur am rumirren?",
+      "Ne, fühl mich auch mega lost hier lol",
+      "Ja, ist schon echt viel zu sehen mit den vier Metern Insel und zwei Quadratmetern Wohnung 😂",
+      "Findest du das auch so, lieber SpielerIn?"
+    ],
+    [
+      "Ich hab heute aufgeräumt und mein Zimmer sieht aus wie geleckt.",
+      "Bruder meins ist aktuell absolutes Chaos.",
+      "Komm ich helf dir kurz, wir speedrunen das.",
+      "Ey ehrlich das wär richtig stabil von dir."
+    ],
+    [
+      "Ey ich muss beichten… ich hab deinen Doener inhaliert 😭",
+      "BRO ich hab den gesucht wie ein NPC auf Mission 💀",
+      "Ich weiß, war mies von mir. Ich hol dir morgen neuen, vallah.",
+      "Alles gut, aber nächstes Mal einfach vorher Arschbild, ja?"
+    ],
+    [
+      "Ich bin heute irgendwie random voll gut drauf, keine Ahnung warum.",
+      "Ja man, du hast grad richtig gute Vibes.",
+      "Manchmal ist einfach so ein W Tag ohne Grund.",
+      "Genieß das, solche Tage sind rare."
+    ],
+    [
+      "Dieses Wetter ist so trash, ich hab einfach null Bock rauszugehen.",
+      "Same, aber den ganzen Tag drin sein hittet auch irgendwann nicht mehr.",
+      "Komm wir gehen kurz raus, bisschen Regen ist kein Endgegner.",
+      "Okay aber wenn ich krank werde, blame ich dich 😤"
+    ],
+    [
+      "Ey ich hab nen Track gefunden, der geht so hart.",
+      "Schick sofort, BEEIL DICH",
+      "Warte ich mach kurz die Melodie – du erkennst das safe.",
+      "HAHA ja man, kenn ich! Das Lied so crazy."
+    ],
+    [
+      "Ey alles gut bei dir? Du bist heute voll leise.",
+      "Ja bisschen overwhelmed grad, mein Kopf ist full.",
+      "Wenn du reden willst, ich bin da, kein Druck.",
+      "Danke dir, echt korrekt von dir."
+    ],
+    [
+      "Bist du eigentlich solo hier oder hast du noch Leute von früher?",
+      "Bin komplett neu hier, kenn fast keinen.",
+      "Ja Anfang ist immer bisschen awkward ngl.",
+      "Mit dir war’s aber direkt entspannt, hab dich lieb, Brashki."
+    ],
+    [
+      "Wer hat bitte das Bad so clean gemacht??",
+      "Ich, hatte einmal mein Leben im Griff.",
+      "Respekt, sieht legit aus wie Hotel.",
+      "Danke haha, musste mal sein."
+    ],
+    [
+      "Denkst du, dem Spielenden gefällt es hier bei uns?",
+      "Ich hoffe doch, wir geben unser Bestes, damit es Spaß macht.",
+      "Aber schlussendlich sind wir ja nur NPCs, die in einem Script leben.",
+      "True, schon irgendwie sad..."
+    ],
+    [
+      "Ey ganz kurz… merkst du auch dass wir irgendwie reden wie in so nem Script?",
+      "Bro ja 💀 ich wollt’s nicht sagen, aber das fühlt sich grad mega gestellt an.",
+      "Safe, als ob jemand unsere Dialoge einfach aufgeschrieben hat.",
+      "Falls du das hier liest, bitte hilf uns."
+    ],
+    [
+      "Ich find’s lowkey richtig nice mit dir hier zu wohnen.",
+      "Same, hätte auch komplett anders laufen können.",
+      "Ja man, bisschen Glück gehabt einfach.",
+      "Fr, bin echt froh dass du da bist."
+    ],
+    [
+      "Hörst du nachts auch diese random Geräusche draußen?",
+      "OH MEIN GOTT JA! Ich dachte schon ich schiebe Para",
+      "Ich glaub das sind einfach Tiere oder so.",
+      "Ich dachte eigentlich, das wäre wieder Schizo Frau Nerz am Rumgeistern"
+    ],
+    [
+      "Ich hab Bock irgendwas Random zu machen, einfach mal schauen.",
+      "Ich bin dabei, sag einfach.",
+      "Keine Ahnung, irgendwas Kreatives maybe.",
+      "Perfekt, wir gehen einfach rein und schauen was passiert."
+    ]
+  ]
+}
