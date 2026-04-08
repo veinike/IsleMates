@@ -1,0 +1,56 @@
+{
+  "residents": [
+    {
+      "id": "6bb27cde-04c9-46c8-b1db-330ca5c9fb36",
+      "name": "Nina",
+      "gender": "FEMALE",
+      "hairColor": "BLONDE",
+      "hairLength": "SHORT",
+      "eyeColor": "BLUE",
+      "skinTone": "LIGHT",
+      "hunger": 42.50000000000088,
+      "tiredness": 85.00000000000067,
+      "mood": 48.5000000000007,
+      "hygiene": 23.74999999999978,
+      "currentRoom": "APARTMENT",
+      "inventoryItemTypes": [
+        "APPLE",
+        "APPLE",
+        "APPLE"
+      ]
+    },
+    {
+      "id": "b1595d8d-fd3e-418b-ad17-0d7c17b0b3df",
+      "name": "Victoria",
+      "gender": "FEMALE",
+      "hairColor": "BLACK",
+      "hairLength": "SHORT",
+      "eyeColor": "BLUE",
+      "skinTone": "LIGHT",
+      "hunger": 24.700000000000625,
+      "tiredness": 18.799999999999965,
+      "mood": 42.80000000000061,
+      "hygiene": 60.699999999998674,
+      "currentRoom": "PARK",
+      "inventoryItemTypes": []
+    }
+  ],
+  "relationships": {
+    "b1595d8d-fd3e-418b-ad17-0d7c17b0b3df_6bb27cde-04c9-46c8-b1db-330ca5c9fb36": {
+      "value": 0.0,
+      "friends": false,
+      "avoidUntilTick": 1227
+    }
+  },
+  "timeOfDay": "EVENING",
+  "dayNightCycleMs": 185600,
+  "gameTick": 1856,
+  "activeGlobalEvents": [
+    "RAINY_DAY",
+    "CONCERT",
+    "DELIVERY",
+    "BIRTHDAY"
+  ],
+  "tutorialCompleted": true,
+  "fridgeFoodUnits": 17
+}

@@ -1,0 +1,9 @@
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/SanityTest.java
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/integration/IntegrationTest.java
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/model/IslandTest.java
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/model/ResidentTest.java
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/persistence/SaveManagerTest.java
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/ui/GameAssetsLoadsTest.java
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/world/BathroomResourceTest.java
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/world/FridgeTest.java
+/Users/phde320203366/projects/PalsAndPalms/src/test/java/com/palsandpalms/world/GameEventQueueTest.java
