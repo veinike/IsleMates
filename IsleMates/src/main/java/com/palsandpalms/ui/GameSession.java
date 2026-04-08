@@ -1,5 +1,12 @@
 package com.palsandpalms.ui;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import com.palsandpalms.engine.EventManager;
 import com.palsandpalms.engine.GameClock;
 import com.palsandpalms.engine.GameState;
@@ -11,17 +18,9 @@ import com.palsandpalms.model.Resident;
 import com.palsandpalms.model.StarterResidents;
 import com.palsandpalms.persistence.AutoSaveTask;
 import com.palsandpalms.persistence.SaveManager;
-import com.palsandpalms.ui.IntroductionRegistry;
 import com.palsandpalms.world.BathroomResource;
 import com.palsandpalms.world.Fridge;
 import com.palsandpalms.world.GameEventQueue;
-
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /** Owns game state and background threads (T-22). */
 public final class GameSession {

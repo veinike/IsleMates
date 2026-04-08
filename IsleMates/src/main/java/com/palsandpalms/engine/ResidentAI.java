@@ -1,18 +1,18 @@
 package com.palsandpalms.engine;
 
+import java.util.Random;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.palsandpalms.model.GameEvent;
+import com.palsandpalms.model.Resident;
 import com.palsandpalms.model.Room;
 import com.palsandpalms.model.TimeOfDay;
-import com.palsandpalms.model.Resident;
 import com.palsandpalms.ui.ResidentDragGuard;
 import com.palsandpalms.ui.ResidentPositionRegistry;
 import com.palsandpalms.world.BathroomResource;
 import com.palsandpalms.world.Fridge;
 import com.palsandpalms.world.GameEventQueue;
-
-import java.util.Random;
-import java.util.UUID;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /** One thread per resident (NFA-02). */
 public final class ResidentAI implements Runnable {

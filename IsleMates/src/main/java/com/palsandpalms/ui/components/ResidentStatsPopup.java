@@ -3,6 +3,7 @@ package com.palsandpalms.ui.components;
 import com.palsandpalms.model.Resident;
 import com.palsandpalms.model.StatusValues;
 import com.palsandpalms.ui.AppFonts;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;

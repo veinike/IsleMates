@@ -1,7 +1,15 @@
 package com.palsandpalms.ui.screens;
 
-import com.palsandpalms.engine.ResidentAI;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+import java.util.function.BiConsumer;
+
 import com.palsandpalms.engine.GameState;
+import com.palsandpalms.engine.ResidentAI;
 import com.palsandpalms.model.Resident;
 import com.palsandpalms.model.Room;
 import com.palsandpalms.ui.AssetLoader;
@@ -12,8 +20,8 @@ import com.palsandpalms.ui.SpriteButton;
 import com.palsandpalms.ui.components.AnimatedResident;
 import com.palsandpalms.ui.components.ConversationOverlay;
 import com.palsandpalms.ui.components.ResidentHudBar;
-
 import com.palsandpalms.ui.components.ResidentStatsPopup;
+
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -23,10 +31,10 @@ import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
@@ -34,14 +42,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.function.BiConsumer;
 
 public final class MainIslandView {
 

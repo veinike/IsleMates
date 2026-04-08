@@ -1,10 +1,10 @@
 package com.palsandpalms.ui;
 
-import com.palsandpalms.model.RelationshipPair;
-
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+
+import com.palsandpalms.model.RelationshipPair;
 
 /**
  * Tracks which resident pairs have already been introduced to each other.

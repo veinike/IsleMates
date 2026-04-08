@@ -1,17 +1,7 @@
 package com.palsandpalms.engine;
 
-import com.palsandpalms.model.GameEvent;
-import com.palsandpalms.model.Inventory;
-import com.palsandpalms.model.Island;
-import com.palsandpalms.model.Relationship;
-import com.palsandpalms.model.RelationshipPair;
-import com.palsandpalms.model.Resident;
-import com.palsandpalms.model.Room;
-import com.palsandpalms.model.TimeOfDay;
-
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -20,6 +10,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
+
+import com.palsandpalms.model.GameEvent;
+import com.palsandpalms.model.Inventory;
+import com.palsandpalms.model.Island;
+import com.palsandpalms.model.Relationship;
+import com.palsandpalms.model.RelationshipPair;
+import com.palsandpalms.model.Resident;
+import com.palsandpalms.model.Room;
+import com.palsandpalms.model.TimeOfDay;
 
 /** Global game state with read/write lock (NFA-10). */
 public final class GameState {

@@ -1,11 +1,19 @@
 package com.palsandpalms.ui.components;
 
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.palsandpalms.model.Relationship;
 import com.palsandpalms.model.Resident;
 import com.palsandpalms.ui.AppFonts;
 import com.palsandpalms.ui.IntroductionRegistry;
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -24,13 +32,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
-
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Full-screen dimmed conversation: two portraits in the middle, dialog bar at

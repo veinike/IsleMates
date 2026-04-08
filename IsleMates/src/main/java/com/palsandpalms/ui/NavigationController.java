@@ -1,7 +1,8 @@
 package com.palsandpalms.ui;
 
+import java.nio.file.Path;
+
 import com.palsandpalms.engine.GameState;
-import javafx.scene.input.MouseEvent;
 import com.palsandpalms.model.Island;
 import com.palsandpalms.model.Resident;
 import com.palsandpalms.model.Room;
@@ -13,15 +14,15 @@ import com.palsandpalms.ui.screens.HouseRoomView;
 import com.palsandpalms.ui.screens.MainIslandView;
 import com.palsandpalms.ui.screens.MainMenuView;
 import com.palsandpalms.ui.screens.TutorialView;
+
 import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-import java.nio.file.Path;
 
 public final class NavigationController {
     private final Stage stage;

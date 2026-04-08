@@ -5,6 +5,7 @@ import com.palsandpalms.ui.GameAssets;
 import com.palsandpalms.ui.GameCursors;
 import com.palsandpalms.ui.GameViewport;
 import com.palsandpalms.ui.SpriteButton;
+
 import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

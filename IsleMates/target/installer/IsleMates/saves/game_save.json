@@ -1,0 +1,78 @@
+{
+  "residents": [
+    {
+      "id": "5f8826e8-d9d7-4bc8-bb56-1ef70b950725",
+      "name": "Nina",
+      "gender": "FEMALE",
+      "hairColor": "BLONDE",
+      "hairLength": "SHORT",
+      "eyeColor": "BLUE",
+      "skinTone": "LIGHT",
+      "hunger": 60.500000000000185,
+      "tiredness": 22.999999999999954,
+      "mood": 99.50000000000003,
+      "hygiene": 70.24999999999963,
+      "currentRoom": "APARTMENT",
+      "inventoryItemTypes": []
+    },
+    {
+      "id": "1c453992-78cd-4d80-9441-05dbe81fe016",
+      "name": "Victoria",
+      "gender": "FEMALE",
+      "hairColor": "BLACK",
+      "hairLength": "SHORT",
+      "eyeColor": "BLUE",
+      "skinTone": "LIGHT",
+      "hunger": 60.20000000000019,
+      "tiredness": 10.399999999999995,
+      "mood": 99.60000000000002,
+      "hygiene": 70.09999999999962,
+      "currentRoom": "APARTMENT",
+      "inventoryItemTypes": []
+    },
+    {
+      "id": "220772dd-a5e1-4ea2-b919-70acdfa28088",
+      "name": "Bewohner",
+      "gender": "FEMALE",
+      "hairColor": "BLONDE",
+      "hairLength": "LONG",
+      "eyeColor": "BLUE",
+      "skinTone": "LIGHT",
+      "hunger": 69.8000000000001,
+      "tiredness": 16.799999999999976,
+      "mood": 96.6000000000002,
+      "hygiene": 74.8999999999998,
+      "currentRoom": "APARTMENT",
+      "inventoryItemTypes": []
+    }
+  ],
+  "relationships": {
+    "1c453992-78cd-4d80-9441-05dbe81fe016_5f8826e8-d9d7-4bc8-bb56-1ef70b950725": {
+      "value": 10.0,
+      "friends": false,
+      "introduced": true,
+      "romanticFeelings": false,
+      "romanticRejected": false,
+      "romanticAccepted": false,
+      "avoidUntilTick": 0
+    },
+    "220772dd-a5e1-4ea2-b919-70acdfa28088_5f8826e8-d9d7-4bc8-bb56-1ef70b950725": {
+      "value": 0.0,
+      "friends": false,
+      "introduced": true,
+      "romanticFeelings": false,
+      "romanticRejected": false,
+      "romanticAccepted": false,
+      "avoidUntilTick": 0
+    }
+  },
+  "timeOfDay": "MORNING",
+  "dayNightCycleMs": 32600,
+  "gameTick": 326,
+  "activeGlobalEvents": [
+    "DELIVERY",
+    "RAINY_DAY"
+  ],
+  "tutorialCompleted": true,
+  "fridgeFoodUnits": 20
+}
